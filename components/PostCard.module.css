@@ -1,0 +1,45 @@
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.card {
+  display: flex; flex-direction: column; gap: 10px;
+  padding: 28px 32px;
+  background: var(--card-bg); border: 1px solid var(--divider);
+  border-radius: var(--radius); box-shadow: var(--shadow);
+  cursor: pointer; text-decoration: none; color: var(--ink);
+  transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+  animation: fadeUp 0.45s ease forwards; opacity: 0;
+}
+.card:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); border-color: var(--muted); }
+
+.meta {
+  display: flex; align-items: center; gap: 6px;
+  font-size: 12px; color: var(--muted); font-weight: 500;
+  text-transform: uppercase; letter-spacing: 0.06em; font-family: var(--font-mono);
+}
+.dot { color: var(--divider); }
+.author { color: var(--rust); }
+
+.title {
+  font-family: var(--font-display);
+  font-size: clamp(18px, 2.5vw, 24px);
+  font-weight: 700; color: var(--ink);
+  line-height: 1.25; letter-spacing: -0.02em;
+}
+
+.excerpt { font-size: 14px; color: var(--muted); line-height: 1.7; flex: 1; }
+
+.tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 4px; }
+.tag {
+  font-size: 11px; font-family: var(--font-mono);
+  color: var(--gold); background: var(--tag-bg);
+  padding: 3px 8px; border-radius: 99px; letter-spacing: 0.03em;
+}
+
+.footer { margin-top: 8px; padding-top: 14px; border-top: 1px solid var(--divider); }
+.readMore {
+  font-size: 12px; font-weight: 600; color: var(--ink);
+  letter-spacing: 0.04em; transition: letter-spacing 0.2s;
+}
+.card:hover .readMore { letter-spacing: 0.08em; }

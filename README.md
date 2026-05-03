@@ -34,3 +34,22 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+posts-app/
+├── app/
+│   ├── globals.css           ← Design tokens, grain texture, animations
+│   ├── layout.tsx
+│   ├── page.tsx              ← Home: grid + search
+│   ├── posts/[id]/page.tsx   ← Detail: read / edit / delete
+│   └── posts/new/page.tsx    ← Create form
+├── components/
+│   ├── Navbar.tsx/css        ← Sticky, frosted-glass header
+│   ├── PostCard.tsx/css      ← Animated grid cards
+│   ├── PostForm.tsx/css      ← Shared create & edit form
+│   └── SearchBar.tsx/css     ← Title / author toggle search
+├── lib/api.ts                ← Typed client for all 6 endpoints
+└── types/index.ts            ← Post, ApiResponse, PostRequest
+
+cp .env.local.example .env.local   # set your Spring Boot URL
+npm install
+npm run dev
